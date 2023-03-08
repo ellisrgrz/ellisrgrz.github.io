@@ -11,11 +11,13 @@
         <h1>Welcome to My Website! Hello World</h1>  
         <p>This is my new website which is hosted on GitHub Pages! New changes</p>
         <button>New commit</button>
-        Print: <p>print evidence here</p>
+        Print: <p id="print">print file name here</p>
         <input type="file" id="inputfile"/>
         <script>
             const inp = document.getElementById("inputfile")
+            const prnt = document.getElementById("print")
             inp.addEventListener('change', function(){
+                prnt.innerHTML = inp.files[0].name
                 console.log(inp.files[0].name)
             })
         </script>
