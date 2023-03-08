@@ -11,6 +11,14 @@
         <h1>Welcome to My Website! Hello World</h1>  
         <p>This is my new website which is hosted on GitHub Pages! New changes</p>
         <button>New commit</button>
+        Print: <p>print evidence here</p>
+        <input type="file" id="inputfile"/>
+        <script>
+            const inp = document.getElementById("inputfile")
+            inp.addEventListener('change', function(){
+                console.log(inp.files[0].name)
+            })
+        </script>
     </main>
   </body>
 </html>
