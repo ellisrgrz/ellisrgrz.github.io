@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
+    <script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
   </head>
   <body>
     <main>
-        <h1>Welcome to My Website! With externally sourced js </h1>  
+        <h1>Welcome to My Website! With externally sourced js and excel read </h1>  
         <p>This is my new website which is hosted on GitHub Pages! New changes</p>
         <button>New commit</button>
         Print: <p id="print">print file name here</p>
@@ -17,11 +18,14 @@
             const inp = document.getElementById("inputfile")
             const prnt = document.getElementById("print")
             inp.addEventListener('change', function(){
-                prnt.innerHTML = inp.files[0].name
-                console.log(inp.files[0].name)
+                //console.log(inp.files[0].name)
+                readXlsxFile(inp.files[0]).then(function(data){
+                    console.log(data);
+                    prnt.innerHTML = "Here's the read excel data: " + data;
+                })
             })
         </script>
-        <script src="index.js"></script>
+        <!--script src="index.js"></script-->
     </main>
   </body>
 </html>
